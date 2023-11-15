@@ -46,3 +46,8 @@ This software includes third party software subject to the following copyrights:
 
 Completed
 ```
+
+Command to install directly from this repo:
+```powershell
+Invoke-RestMethod -Uri "github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | Invoke-Expression
+```
