@@ -13,40 +13,11 @@ Tested on:
 * Ubuntu 22.04 PowerShell 7
 * macos 14 PowerShell 7
 
-Command to run this script from the repo:
+Command to run this script from github:
 ```powershell
 Invoke-RestMethod -Uri "github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | Invoke-Expression
 ```
 
 Sample Output:
-```
-PS /home/cc> Invoke-RestMethod -Uri "github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | Invoke-Expression
-Detected home folder for PowerShell Modules: /home/cc/.local/share/powershell/Modules
-AWS.Tools detected in /home/cc/.local/share/powershell/Modules - removing currently installed AWS.Tools modules.
-Downloading AWS.Tools.zip to: /home/cc/.local/share/powershell/Modules/AWS.Tools.zip
-Expanding AWS.Tools.zip to: /home/cc/.local/share/powershell/Modules
-Deleting AWS.Tools.zip
-Time to Download and Install: 
-TotalSeconds : 5.5762452
 
-AWS.Tools for PowerShell installed - running Get-AWSPowerShellVersion 
-
-AWS Tools for PowerShell
-Version 4.1.533
-Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-
-Amazon Web Services SDK for .NET
-Core Runtime Version 3.7.302.16
-Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-
-Release notes: https://github.com/aws/aws-tools-for-powershell/blob/master/CHANGELOG.md
-
-This software includes third party software subject to the following copyrights:
-- Logging from log4net, Apache License
-[http://logging.apache.org/log4net/license.html]
-
-Completed
-
-```
-
-
+![image](https://github.com/HP-85/atp/blob/main/awsps.png)
