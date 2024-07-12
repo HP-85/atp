@@ -2,7 +2,7 @@
 2023-11-08 Install AWS.Tools for PowerShell 7 on Windows, Mac, or Linux, and PowerShell 5 on Windows
 2023-11-08 Installs to user's PS Modules folder so installation does not require eleveated prompt
 2023-11-08 Deletes existing AWS.Tools module directories to clear older versions
-2024-07-12 Updated PSModules home folder detection 2024-07-12
+2024-07-12 Updated PSModules home folder detection
 #>
 
 # Linux and macOS PowerShell 7
