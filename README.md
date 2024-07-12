@@ -1,14 +1,14 @@
 # AWS Tools for PowerShell - cross platform installer
 This script downloads the AWS.Tools.zip file containing all AWS.Tool PowerShell modules, 
-and extracts them to the user's PSModules folder in their home directory (does not require elevated permissions) as described in the second install method described on this pag
+and extracts them to the user's PSModules folder in their home directory (does not require elevated permissions) as described in the second install method described on this page
 * https://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-set-up-windows.html#ps-installing-awstools
 
-It also addresses the issue described on this page:
+It also addresses the issue described here:
 * https://github.com/aws/aws-tools-for-powershell/issues/172
 
 Tested on:
 * Windows 10 PowerShell 5 and 7
-* Windows 11 PowerShell 5 and 7
+* Windows 11 PowerShell 5 and 7 
 * Ubuntu 22.04 PowerShell 7
 * macos 14 PowerShell 7
 
