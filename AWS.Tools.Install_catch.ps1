@@ -41,7 +41,6 @@ Write-Host "$PSMUserPath"
 
 Measure-Command {
     #Delete current AWS Modules:
-    #If you see errors like 'Access to the path 'aws-crt-auth.dll' is denied.' quit and re-leaunch PowerShell to unload AWS modules
     If (Test-Path $PSMUserPath/Aws.Tools.*) {
         Write-Host "AWS.Tools detected in " -NoNewline -ForegroundColor Cyan
         Write-Host "$PSMUserPath" -NoNewline
