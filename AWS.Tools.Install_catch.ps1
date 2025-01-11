@@ -52,7 +52,7 @@ Measure-Command {
         catch {
             Write-Host "Error removing AWS.Tools modules: $_" -ForegroundColor Red
             Write-Host "Please close PowerShell and try again to ensure all AWS.Tools modules are unloaded" -ForegroundColor Yellow
-            Exit
+            Break
         }
     }
     
