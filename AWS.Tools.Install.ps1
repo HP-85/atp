@@ -85,7 +85,9 @@ Measure-Command {
     } else {
         "https://sdk-for-net.amazonwebservices.com/ps/v4/latest/AWS.Tools.zip"
     }
-    
+
+    Write-Host "Downloading AWS.Tools.zip from: " -ForegroundColor Cyan -NoNewline
+    Write-Host $downloadUrl 
     Write-Host "Downloading AWS.Tools.zip to: " -ForegroundColor Cyan -NoNewline
     Write-Host "$PSMUserPath/AWS.Tools.zip" 
     Invoke-WebRequest `
