@@ -23,7 +23,7 @@ Command to run this script from github:
 Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | Invoke-Expression
 ```
 
-To from from github with `-Installv5Preview` or `-Remove` parameters:
+To run directly from github with `-Installv5Preview` or `-Remove` parameters, use the following syntax:
 
 Install v5 Preview (replaces existing AWS.Tools files user's PSModules folder):
 * https://docs.aws.amazon.com/powershell/v5/userguide/pstools-welcome.html
