@@ -25,10 +25,6 @@ Invoke-RestMethod -Uri "github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | I
 
 To from from github with `-Installv5Preview` or `-Remove` parameters:
 
-Install latest AWS.Tools:
-```powershell
-& ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1")))
-```
 Install v5 Preview (replaces existing AWS.Tools files user's PSModules folder):
 * https://docs.aws.amazon.com/powershell/v5/userguide/pstools-welcome.html
 
