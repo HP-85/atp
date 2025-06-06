@@ -64,7 +64,7 @@ Measure-Command {
    # exit without installing if -remove param is specified
     If ($Remove) {
             Write-Host '"-Remove" switch specified - exiting without installing.' -ForegroundColor Cyan
-            return
+            Break
         }
     
     #Create PSModule User Path Directory if it doesn't exist - common after installing PS7
