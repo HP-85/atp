@@ -23,6 +23,13 @@ Command to run this script from github:
 Invoke-RestMethod -Uri "github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | Invoke-Expression
 ```
 
+To from from github with `-Installv5Preview` or `-Remove` parameters:
+
+```powershell
+& ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1"))) -Installv5Preview
+& ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1"))) -remove
+```
+
 Sample Output:
 
 ![image](https://github.com/HP-85/atp/blob/main/awsps.png)
