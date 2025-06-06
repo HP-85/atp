@@ -10,13 +10,13 @@ It also addresses the issue described here:
 * https://github.com/aws/aws-tools-for-powershell/issues/172
 
 Tested on:
-* Windows 10 PowerShell 5 and 7.4
-* Windows 11 PowerShell 5 and 7.4 
-* Ubuntu 22.04 PowerShell 7.4
-* macos 15 PowerShell 7.4
+* Windows 11 PowerShell 5 and 7.5.1 (x64 and arm64)
+* Ubuntu 22.04 PowerShell 7.5.1 (x64 and arm64)
+* macos 15 PowerShell 7.5.1 (arm64)
 
 Possible issues:
 * If you have AWS.Tools installed for 'all users' or another 'AWS Tools for PowerShell' package installed (such as AWSPowerShell.NetCore or AWSPowerShell), you may need to remove that to avoid conflicts.
+* On Windows - you may need to run `Set-ExecutionPolicy RemoteSigned` 
 
 Command to run this script from github:
 ```powershell
@@ -25,8 +25,18 @@ Invoke-RestMethod -Uri "github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | I
 
 To from from github with `-Installv5Preview` or `-Remove` parameters:
 
+Install latest AWS.Tools:
+```powershell
+& ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1")))
+```
+Install v5 Preview (replaces existing AWS.Tools files user's PSModules folder):
+* https://docs.aws.amazon.com/powershell/v5/userguide/pstools-welcome.html
+
 ```powershell
 & ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1"))) -Installv5Preview
+```
+Remove all AWS.Tools modules from user's PSModules folder:
+```powershell
 & ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1"))) -remove
 ```
 
