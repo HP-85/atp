@@ -104,9 +104,5 @@ Measure-Command {
 } | Format-List TotalSeconds 
 
 Write-Host 'AWS.Tools for PowerShell installed - running Get-AWSPowerShellVersion '  -ForegroundColor Cyan
-if ((Get-Host).Version.Major -eq 5) {
-    powershell.exe -command {Get-AWSPowerShellVersion; exit} -NonInteractive -NoProfile
-} else {
-    pwsh -command {Get-AWSPowerShellVersion; exit} -NonInteractive -NoProfile
-}
+Get-AWSPowerShellVersion
 Write-Host 'Completed' -ForegroundColor Cyan
