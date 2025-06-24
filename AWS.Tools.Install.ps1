@@ -17,10 +17,10 @@ param(
     [switch]$Remove,
     [string]$Version
 )
-# Validate Version parameter if provided
+
 if ($Version -and $Version -notmatch '^\d\.\d\.\d{3}$') {
     Write-Host "Version must be in format X.X.XXX (e.g., 4.0.000)" -ForegroundColor Red
-    Write-Host "see https://github.com/aws/aws-tools-for-powershell/blob/main/changelogs/CHANGELOG.2025.md for versions." -ForegroundColor Red
+    Write-Host "see https://github.com/aws/aws-tools-for-powershell/blob/main/changelogs/CHANGELOG.2025.md for version #'s" -ForegroundColor Red
     Break
 }
 
@@ -72,7 +72,7 @@ Measure-Command {
             Break
         }
     }
-   # exit without installing if -remove param is specified
+   # exit without installing if -Remove param is specified
     If ($Remove) {
             Write-Host '"-Remove" switch specified - exiting without installing.' -ForegroundColor Cyan
             Break
@@ -105,9 +105,16 @@ Measure-Command {
     Write-Host $downloadUrl 
     Write-Host "Downloading AWS.Tools.zip to: " -ForegroundColor Cyan -NoNewline
     Write-Host "$PSMUserPath/AWS.Tools.zip" 
-    Invoke-WebRequest `
-        -Uri $downloadUrl `
-        -OutFile $PSMUserPath/AWS.Tools.zip 
+    try {
+        Invoke-WebRequest `
+            -Uri $downloadUrl `
+            -OutFile $PSMUserPath/AWS.Tools.zip `
+            -ErrorAction Stop
+    } catch {
+        Write-Host "Failed to download AWS.Tools from $downloadUrl" -ForegroundColor Red
+        Write-Host "see https://github.com/aws/aws-tools-for-powershell/blob/main/changelogs/CHANGELOG.2025.md for version #'s" -ForegroundColor Red
+        Break
+    }
     
     #Expand modules to PSModule User Path Directory
     Write-Host "Expanding AWS.Tools.zip to: " -ForegroundColor Cyan -NoNewline
