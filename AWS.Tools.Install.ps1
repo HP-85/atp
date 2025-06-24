@@ -19,9 +19,9 @@ param(
 )
 # Validate Version parameter if provided
 if ($Version -and $Version -notmatch '^\d\.\d\.\d{3}$') {
-    Write-Host "Version must be in format X.X.XXX (e.g., 4.1.674)" -ForegroundColor Red
-    Write-Host "see https://github.com/aws/aws-tools-for-powershell/blob/main/changelogs/CHANGELOG.2025.md for versions."
-    break
+    Write-Host "Version must be in format X.X.XXX (e.g., 4.0.000)" -ForegroundColor Red
+    Write-Host "see https://github.com/aws/aws-tools-for-powershell/blob/main/changelogs/CHANGELOG.2025.md for versions." -ForegroundColor Red
+    Break
 }
 
 # Linux and macOS PowerShell 7
