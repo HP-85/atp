@@ -15,9 +15,13 @@
 param(
     [switch]$v4,
     [switch]$Remove,
-    [ValidatePattern('^\d\.\d\.\d{3}$')]
     [string]$Version
 )
+# Validate Version parameter if provided
+if ($Version -and $Version -notmatch '^\d\.\d\.\d{3}$') {
+    Write-Error "Version must be in format X.X.XXX (e.g., 4.0.000)"
+    Break
+}
 
 # Linux and macOS PowerShell 7
 If ($IsLinux -eq $true -or $IsMacOS -eq $true) {
