@@ -43,6 +43,11 @@ Remove all AWS.Tools modules from user's PSModules folder:
 & ([ScriptBlock]::Create((Invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1"))) -remove
 ```
 
+If you have issues with preloaded AWS.Tools Modules, you can try this syntax from a bash or cmd.exe prompt:
+```shell
+pwsh --command 'invoke-RestMethod -Uri "https://github.com/HP-85/atp/raw/main/AWS.Tools.Install.ps1" | Invoke-Expression'
+```
+
 Sample Output:
 
 ![image](https://github.com/HP-85/atp/blob/main/awsps.png)
